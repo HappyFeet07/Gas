@@ -11,14 +11,3 @@ contract DoWhile {
     } while (i < 200);
   }
 }
-
-contract DoWhileOptimized {
-  function go() public {
-    uint256 i;
-    do {
-      unchecked {
-        ++i;
-      }
-    } while (i < 200);
-  }
-}

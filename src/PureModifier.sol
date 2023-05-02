@@ -17,26 +17,3 @@ contract PureModifier {
  	function funcB() public checkOwner {}
  	function funcC() public checkOwner {}
 }
-
-contract PureModifierOptimized {
-	address owner;
-  error NotOwner();
-  constructor() {
-    owner = msg.sender;
-  }
-	function _checkOwner() internal view {
-		if(msg.sender != owner) {
-      revert NotOwner();
-    }
-  }
-  function funcA() public {
-    _checkOwner();
-  }
- 	function funcB() public {
-    _checkOwner();
-  }
- 	function funcC() public {
-    _checkOwner();
-  }
-}
-

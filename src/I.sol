@@ -6,13 +6,3 @@ contract I {
     for(uint256 i = 0; i < 5; i++) {}
   }
 }
-
-contract IOptimized {
-  function Iplusplus() public {
-    for(uint256 i = 0; i < 5;) {
-      unchecked {
-        ++i;
-      }
-    }
-  }
-}

@@ -4,8 +4,3 @@ contract Callme {
   function callme() public {
   }
 }
-
-contract CallmeOptimized {
-  function callme() public payable {
-  }
-}

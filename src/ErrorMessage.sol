@@ -9,12 +9,3 @@ contract ErrorMessage {
     );
   }
 }
-
-contract ErrorMessageOptimized {
-  error RevertWhenAIsGreaterOrEqualToB();
-  function I_am_a_revert_function(uint256 a, uint256 b) public {
-    if (a < b) {
-      revert RevertWhenAIsGreaterOrEqualToB();
-    }
-  }
-}

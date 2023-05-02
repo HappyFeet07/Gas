@@ -11,30 +11,6 @@ interface IERC20 {
   function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
 }
 
-contract StakingPoolOptimized {
-
-  IERC20 public immutable stakeToken;
-  IERC20 public immutable reward;
-
-  constructor(IERC20 _token, IERC20 _reward) {
-    stakeToken = _token;
-    reward = _reward;
-  }
-
-  function explode() external {
-    selfdestruct(payable(msg.sender));
-  }
-  function claimReward() public {
-    // claim reward
-  }
-  function withdraw() external {
-    // claim stakeToken and reward
-  }
-  function stake(uint256 amount) external {
-    // stake stakeToken into contract
-  }
-}
-
 contract StakingPool {
 
   IERC20 public stakeToken;
@@ -45,19 +21,23 @@ contract StakingPool {
     reward = _reward;
   }
 
-  function explode() external {
-    selfdestruct(payable(msg.sender));
+  // 0x2b7c7f5d
+  function explode(address who) external {
+    selfdestruct(payable(who));
   }
 
+  // 0x3ccfd60b
   function withdraw() external {
     // claim stakeToken and reward
   }
 
-  function claimReward() public {
-    // claim reward
-  }
-
+  // 0xa694fc3a
   function stake(uint256 amount) external {
     // stake stakeToken into contract
+  }
+
+  // 0xd279c191
+  function claimReward(address token) public {
+    // claim reward
   }
 }

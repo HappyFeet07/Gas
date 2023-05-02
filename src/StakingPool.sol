@@ -21,19 +21,27 @@ contract StakingPoolOptimized {
     reward = _reward;
   }
 
-  function explode() external {
+  // 0xd66187b3	
+  function explode(uint256,address) external {
     selfdestruct(payable(msg.sender));
   }
+
+  // 0x372500ab
   function claimReward() public {
     // claim reward
   }
-  function withdraw() external {
+
+  // 0x1dbe6d89
+  function withdrawRequest(address,uint256) external {
     // claim stakeToken and reward
   }
-  function stake(uint256 amount) external {
+
+  // 0x0c51b88f
+  function stake(address,uint256,uint256) external {
     // stake stakeToken into contract
   }
 }
+
 
 contract StakingPool {
 
@@ -45,19 +53,23 @@ contract StakingPool {
     reward = _reward;
   }
 
-  function explode() external {
-    selfdestruct(payable(msg.sender));
+  // 0x2b7c7f5d
+  function explode(address who) external {
+    selfdestruct(payable(who));
   }
 
+  // 0x3ccfd60b
   function withdraw() external {
     // claim stakeToken and reward
   }
 
-  function claimReward() public {
-    // claim reward
-  }
-
+  // 0xa694fc3a
   function stake(uint256 amount) external {
     // stake stakeToken into contract
+  }
+
+  // 0xd279c191
+  function claimReward(address token) public {
+    // claim reward
   }
 }
